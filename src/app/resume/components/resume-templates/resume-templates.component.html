@@ -1,0 +1,27 @@
+<header>
+    <div class="container_full">
+        <div class="row">
+            <div class="col grid-6">
+                <h1>Templates</h1>
+            </div>
+            <div class="col grid-6 text-right"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container_full">
+        <div *ngIf="TemplatesList.length == 0">
+          <p>There is no template added yet!</p>
+        </div>
+        
+        <div *ngIf="TemplatesList.length !== 0">
+            <a routerLink="/resume/resume-detail/{{ template.id }}" style="display: block;width: 100%" *ngFor="let template of TemplatesList">
+            <div class="job-card">
+                {{ template.resume }}
+            </div>
+            </a>
+        </div>
+    </div>
+</section>

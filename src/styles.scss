@@ -1,0 +1,506 @@
+$theme-color : red;
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow: hidden;
+    overflow-y: auto !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: calibri;
+}
+
+.readonly{
+    background-color: #e9e5e5;
+    border: 1px solid #ccc;
+    cursor: no-drop;
+    opacity: 0.6;
+}
+
+.col {
+    // padding: 0 15px;
+    float: left;
+
+    &.grid-6 {
+        width: 50%;
+    }
+}
+
+.btn {
+    text-decoration: none;
+    padding: 9px 15px;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid;
+    background-color: transparent;
+    cursor: pointer;
+
+    &.btn-outline-primary {
+        border-color: $theme-color  !important;
+        color: $theme-color  !important;
+
+        &:hover {
+            background-color: $theme-color  !important;
+            color: #fff !important;
+        }
+    }
+
+    &.btn-primary {
+        background-color: $theme-color  !important;
+        border-color: $theme-color  !important;
+        color: #fff !important;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.clearfix {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.container_full {
+    width: 100%;
+    padding: 0px 30px;
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.text_center {
+    text-align: center;
+}
+
+
+.job-card {
+    background: #efefef;
+    width: calc(20% - 15px);
+    float: left;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    min-height: 140px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    .act_button_list {
+        position: absolute;
+        top: 50%;
+        right: -30%;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        transform: translateY(-50%);
+        transition: all 300ms ease-in;
+
+        li {
+            margin-bottom: 8px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .act_buttons {
+            cursor: pointer;
+            font-size: 13px;
+            width: 25px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            text-align: center;
+            color: #fff;
+            line-height: 25px;
+            border-radius: 50%;
+
+            &:hover {
+                background: rgba(0, 0, 0, 1);
+            }
+        }
+
+    }
+
+    &:hover {
+        .act_button_list {
+            right: 15px !important;
+        }
+    }
+}
+
+
+.table {
+    width: 100%;
+}
+
+.color_box {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    display: inline-block;
+}
+
+
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td,
+.table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+.user_image {
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+
+.page_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.content_part {
+    padding-top: 110px;
+}
+
+.mb-15px {
+    margin-bottom: 15px;
+}
+
+.ckEditor {
+
+    &.resume_ckEditor {
+        .inner_title {
+            font-size: 12px !important;
+            margin-bottom: 3px;
+        }
+
+
+        .period {
+            color: #ff3535;
+            margin-left: 20px;
+            font-size: 10px;
+        }
+
+        p {
+            * {
+                font-size: 12px;
+            }
+        }
+
+
+        .position {
+            color: rgba(0, 0, 0, 0.4);
+            font-weight: 600;
+            font-size: 10px;
+        }
+
+        ul {
+            padding-left: 10px !important;
+            list-style-position: outside;
+            margin: 0 !important;
+
+            li {
+                margin-bottom: 10px;
+                font-size: 10px;
+            }
+        }
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td,
+        table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            color: #000;
+            font-size: 10px;
+        }
+
+
+        table td {
+            font-size: 10px;
+        }
+    }
+
+    &.admin_ckEditor {
+        ul {
+            padding-left: 15px !important;
+            list-style-position: outside;
+            margin: 0 !important;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
+
+br {
+    display: none;
+}
+
+.skills_list {
+    ul {
+        list-style: none;
+        position: relative;
+        left: -22px;
+
+        li {
+            display: inline-block;
+            background: #8c8383;
+            color: #fff;
+            font-size: 13px;
+            margin-right: 5px;
+            padding: 6px 10px;
+            border-radius: 5px;
+        }
+    }
+
+    br {
+        display: none !important;
+    }
+}
+
+
+
+.theme_changer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+    text-align: right;
+
+    .form_box {
+        background: #ffff;
+        padding: 13px 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 40px;
+        margin: 7px 0px 18px;
+        padding: 10px;
+    }
+
+
+    .bnt_setting {
+        border: 0;
+        background: #ccc;
+        width: 50px;
+        height: 50px;
+        font-size: 19px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+            background: #333 !important;
+        }
+    }
+}
+
+
+.my-btn-primary {
+    color: #fff;
+}
+
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+
+.like_clearfix {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.same-left {
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+
+.same-right {
+    width: 50%;
+    float: left;
+    padding-left: 15px;
+}
+
+
+
+#content {
+    width: 100%;
+    font-family: Helvetica;
+}
+
+#content *,
+#content {
+    box-sizing: border-box;
+}
+
+#table {
+    width: 100%;
+    max-width: 900px;
+}
+
+
+
+.exp_editor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .exp_box {
+        display: flex;
+        flex-direction: column;
+        // width: calc(50% - 10px);
+        width: 100%;
+        margin-bottom: 10px;
+        background: #fff;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-left: 8px;
+
+        p{
+            margin: 0 0 11px;
+            font-size: 10px;
+            b{
+                font-size: 10px;
+            }
+
+            &.note {
+                color: red;
+                font-weight: bold;
+                font-size: 8px !important;
+            }
+        }
+
+        .inner_title{
+            margin-top: 0px !important;
+        }
+
+        ul{
+            padding-left: 5px !important;
+        }
+
+        // &:nth-child(2n+1){
+        //     margin-left: 0 !important
+        // }
+        .its_second_heading {
+            font-size: 11px;
+        }
+
+        &.current_company{
+            width: 100%;
+            background: #eeeded;
+        }
+    }    
+}
+
+
+.btn_link {
+    background: transparent;
+    border: 0;
+    text-decoration: underline;
+    color: red;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover{
+        color: #000;
+    }
+}
+
+.project_box{
+    b{
+        font-size: 11px;
+        color: rgba(0, 0, 0, 0.4);
+    }
+    p{
+        font-size: 10px;
+    }
+
+    a{
+        color: #fff;
+    }
+}

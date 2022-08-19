@@ -1,0 +1,21 @@
+.form_wrapper{
+    margin: 0 -10px;
+    .form-group {
+        width: 25%;
+        float: left;
+        margin-bottom: 15px;
+        padding: 0 10px;
+        .form-control{
+            height: 40px;
+            width: 100%;
+            padding: 7px;
+        }
+    }
+}
+
+.full_width{
+    width: 100% !important;
+}
+.half_width{
+width: 50% !important;
+}

@@ -1,0 +1,293 @@
+<header class="page_header">
+    <div class="container_full">
+      <div class="row">
+        <div class="col grid-6">
+            <h1>#{{templateData.id}}. {{templateData.resume}}</h1>
+        </div>
+        <div class="col grid-6 text-right">
+          <button class="btn btn-primary" (click)="duplicateTemplate(templateData)" style="margin-top: 22px;">Duplicate</button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </header>
+
+<section class="content_part">
+    <div class="container_full">
+        <table class="table mb-15px">
+            <tr>
+                <th style="width: 20%;text-align: left;">
+                    Theme Color
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    <span class="color_box" [ngStyle]="{'background-color': templateData.theme}"></span>
+                </td>
+                <th style="width: 20%;text-align: left;">
+                    Header BG
+                </th>
+                <td style="width: 30%;text-align: center;">
+                  <span class="color_box" [ngStyle]="{'background-color': templateData.headerBG}"></span>
+                </td>
+            </tr>
+            <tr>
+              <th style="width: 20%;text-align: left;">
+                User Pic
+              </th>
+              <td style="width: 30%;text-align: center;">
+                <span class="user_image">
+                    <img [src]="templateData.pic" />
+                </span>
+              </td>
+              <th style="width: 20%;text-align: left;">
+                Visibility
+              </th>
+              <td style="width: 30%;text-align: center;">
+                {{templateData.visibility}}
+              </td>
+            </tr>
+            <tr>
+                <th style="width: 20%;text-align: left;">
+                    First Name
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.fname}}
+                </td>
+                <th style="width: 20%;text-align: left;">
+                    Last Name
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.lname}}
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 20%;text-align: left;">
+                    Experience
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.expNum}} Years of Exp.
+                </td>
+                <th style="width: 20%;text-align: left;">
+                  Post
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.post}}
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 20%;text-align: left;">
+                    Email ID
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.email}}
+                </td>
+                <th style="width: 20%;text-align: left;">
+                    Mobile No.
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.mobNum}}
+                </td>
+            </tr>
+            <tr>
+                <th style="width: 20%;text-align: left;">
+                    Address
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    {{templateData.addr}}
+                </td>
+                <th style="width: 20%;text-align: left;">
+                    LinkedIn Profile
+                </th>
+                <td style="width: 30%;text-align: center;">
+                    <div class="ckEditor resume_ckEditor" [innerHTML]="templateData.linProfile"></div>
+                </td>
+            </tr>
+            <tr>
+              <th style="width: 20%;text-align: left;">
+                  Secondary Heading
+              </th>
+              <td style="width: 30%;text-align: center;">
+                  {{templateData.heading}}
+              </td>
+              <th style="width: 20%;text-align: left;"></th>
+            <td style="width: 30%;text-align: center;"></td>
+          </tr>
+        </table>
+
+        <div class="card mb-15px" *ngIf="templateData.summary.length !== 0">
+            <h3 style="margin-top: 0;">Summary</h3>
+            {{templateData.summary}}
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.jobSkills.length !== 0">
+            <h3 style="margin-top: 0;">Job Skill</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.jobSkills"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.toolsTech.length !== 0">
+            <h3 style="margin-top: 0;">Tools &amp; Technology</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.toolsTech"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.experinceDetail.length !== 0">
+            <h3 style="margin-top: 0;">Experience</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.experinceDetail"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.educationDetail.length !== 0">
+            <h3 style="margin-top: 0;">Education</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.educationDetail"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.projectDetails.length !== 0">
+            <h3 style="margin-top: 0;">Projects</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.projectDetails"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.skillsDetail.length !== 0">
+            <h3 style="margin-top: 0;">Skills</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.skillsDetail"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.certificationDetails.length !== 0">
+            <h3 style="margin-top: 0;">Certification</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.certificationDetails"></div>
+        </div>
+
+        <div class="card mb-15px" *ngIf="templateData.coursesDetail.length !== 0">
+            <h3 style="margin-top: 0;">Courses</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.coursesDetail"></div>
+        </div>
+        <div class="card mb-15px" *ngIf="templateData.achievmentsDetail.length !== 0">
+            <h3 style="margin-top: 0;">Achievments</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.achievmentsDetail"></div>
+        </div>
+        <div class="card mb-15px" *ngIf="templateData.languages.length !== 0">
+            <h3 style="margin-top: 0;">Languages</h3>
+            <div class="ckEditor admin_ckEditor" [innerHTML]="templateData.languages"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- duplicate data -->
+<section class="content_part" style="display: none;">
+    <div class="container_full">
+      <div class="" style="margin-bottom: 20px">
+        <div class="form_wrapper">
+          <div class="form-group">
+            <label for="">Resume</label>
+            <input type="text" [(ngModel)]="templateData.resume" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Theme</label>
+            <input type="text" [(ngModel)]="templateData.theme" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Theme</label>
+            <input type="text" [(ngModel)]="templateData.headerBG" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">User Image</label>
+            <input type="text" [(ngModel)]="templateData.pic" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" [(ngModel)]="templateData.fname" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" [(ngModel)]="templateData.lname" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Secondary Heading</label>
+            <input type="text" [(ngModel)]="templateData.heading" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Department</label>
+            <input type="text" [(ngModel)]="templateData.post" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Experience</label>
+            <input type="text" [(ngModel)]="templateData.expNum" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Email Address</label>
+            <input type="text" [(ngModel)]="templateData.email" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Mobile Number</label>
+            <input type="text" [(ngModel)]="templateData.mobNum" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="">Address</label>
+            <input type="text" [(ngModel)]="templateData.addr" class="form-control" />
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-group full_width">
+            <label for="">LinkedIn Profile Link</label>
+            <div class="ckEditor resume_ckEditor" [innerHTML]="templateData.linProfile"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-group full_width">
+            <label for="">Summary</label>
+            <textarea [(ngModel)]="templateData.summary" rows="10" class="form-control" style="height: 100px;"></textarea>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Job Skills</label>
+            <angular-editor [(ngModel)]="templateData.jobSkills" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Tools & Technology</label>
+            <angular-editor [(ngModel)]="templateData.toolsTech" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Experience Detail</label>
+            <angular-editor [(ngModel)]="templateData.experinceDetail" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Education Detail</label>
+            <angular-editor [(ngModel)]="templateData.educationDetail" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Project Detail</label>
+            <angular-editor [(ngModel)]="templateData.projectDetails" [config]="config">
+            </angular-editor>
+          </div>
+  
+          <div class="form-group half_width">
+            <label for="">Skills</label>
+            <angular-editor [(ngModel)]="templateData.skillsDetail" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Certifications</label>
+            <angular-editor [(ngModel)]="templateData.certificationDetails" [config]="config"></angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Courses</label>
+            <angular-editor [(ngModel)]="templateData.coursesDetail" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Achievments</label>
+            <angular-editor [(ngModel)]="templateData.achievmentsDetail" [config]="config"></angular-editor>
+          </div>
+          <div class="form-group half_width">
+            <label for="">Languages</label>
+            <angular-editor [(ngModel)]="templateData.languages" [config]="config">
+            </angular-editor>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <div class="ckEditor resume_ckEditor" [innerHTML]="templateData.certificationDetails"></div>
