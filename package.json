@@ -22,7 +22,6 @@
     "@foliojs-fork/pdfkit": "^0.13.0",
     "@kolkov/angular-editor": "^3.0.0-beta.0",
     "bootstrap": "^4.6.2",
-    "json-server": "^0.4.2",
     "jspdf": "^2.5.1",
     "pdfmake": "^0.2.5",
     "rxjs": "~7.5.0",
